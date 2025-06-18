@@ -1,0 +1,61 @@
+# Vetro's Quick and (kind of) Dirty GDExtension CMake template
+
+This repo has been built using with the info I could understand by reading the godot-cpp repository and docs:
+
+Also from what I could learn from visiting this repo:
+https://github.com/asmaloney/GDExtensionTemplate
+
+*(which i'll admit, I took some code from to generate the gdextension file along with some snippets)*
+
+Made mostly for personal use, but I'll be happy if it results useful to someone.
+
+This kind of a quick and dirty implementation, the bare minimum to get something running
+if you want something more robust, I'll recommend asmaloney's template 1000 times
+
+But if you want something simpler to understand and modify then maybe this is what you need, ideally I'll be updating this as I understand how to better use CMake, but for the moments this should work just fine.
+
+
+# BEFORE YOU START
+
+## Select your godot version
+
+godot-cpp has been added as a git submodule, by default I set it as in Godot 4.4
+
+
+## Generating Godot bindings
+
+In case you cannot use the bindings that come from godot-cpp you can get the extension api directly from your godot binary.
+
+Just try to open the executable from the terminal:
+```
+    godot --dump-extension-api
+```
+
+You will get a file called `extension_api.json`, just drop it at the root of this folder and it will be used instead of the default one on godot-cpp.
+
+
+# WORKING ON YOUR LIBRARY
+
+All the source files inside src are listed and added to the library automatically, you can classify in subfolders if you like, as long as it is a .cpp ans is inside src it will be compiled and added to the library.
+
+So is just a matter adding your files there and building your project.
+
+## Building your library
+
+When you build your library, it will be saved in build/bin
+Along with it a proper `.gdextension` file is generated.
+
+If you're on windows, the file will be on bin/lib/Windows/yourLibrary.dll
+and so on for other Mac and Linux
+
+
+## Testing
+
+Use the install command, this will automatically move the files to INSTALL_DIR,
+which by default is set in folder called demo inside the project
+
+If you want it to be elsewhere just change the path the variable,
+or just make a project inside of that folder if you prefer it.
+
+I'm planning to maybe use another routine that isn't the install command itself
+but as I said, quick and dirty.
