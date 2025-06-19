@@ -1,5 +1,3 @@
-# Vi-dot's Quick and (kind of) Dirty GDExtension CMake template
-
 This repo has been built using with the info I could understand by reading the [godot-cpp repository](https://github.com/godotengine/godot-cpp) and [Godot docs](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html).
 
 Also from what I could learn from visiting [asmaloney's GDExtension template](https://github.com/asmaloney/GDExtensionTemplate), *(which i'll admit, I took some code from to generate the .gdextension file along with some snippets)*.
