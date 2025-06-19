@@ -4,9 +4,7 @@ This repo has been built using with the info I could understand by reading the [
 
 Also from what I could learn from visiting [asmaloney's repo](https://github.com/asmaloney/GDExtensionTemplate), *(which i'll admit, I took some code from to generate the .gdextension file along with some snippets)*.
 
-Made mostly for personal use, but I'll be happy if it results useful to someone. This kind of a quick and dirty implementation, the bare minimum to get something running; if you want something more robust, I recommend asmaloney's template 1000 times.
-
-But if you want something simpler to understand and modify then maybe this is what you need, ideally I'll be updating this as I understand how to better use CMake, but for the moments this should work just fine.
+Made mostly for personal use, but I'll be happy if it results useful to someone, kind of a quick and dirty implementation, the bare minimum to get something running; if you want something more robust, I recommend asmaloney's template 1000 times.
 
 # Before you start
 
