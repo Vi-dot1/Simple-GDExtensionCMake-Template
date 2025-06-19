@@ -15,6 +15,7 @@ message( STATUS "Install directory: ${INSTALL_DIR}")
 # Defines the function used in your code to initialize your module
 # since I picked up the example directly from the docs, I'm using that value
 set(ENTRY_SYMBOL "example_library_init")
+set(GODOT_VERSION "4.4")
 
 # Create compile commands, useful for debugging but I mostly just use it for syntax highlighting, 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -66,13 +67,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE src)
  +-------------------------------------------+
 ]] 
 
-# Generate gdextension config file
-add_subdirectory(template)
-
 
 # Grab custom extension if any,
-# in case this variable is not defined, godot-cpp will default to the one in:
-# ./godot-cpp/gdextension/extension_api.json
+# in case this variable is not defined, godot-cpp will default to the one in: ./godot-cpp/gdextension/extension_api.json
 if(EXISTS ${CMAKE_SOURCE_DIR}/extension_api.json)
     set(GODOTCPP_CUSTOM_API_FILE ${CMAKE_SOURCE_DIR}/extension_api.json)
     message("Using bindings provided on repo")
@@ -84,11 +81,14 @@ endif()
 add_subdirectory(godot-cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE godot-cpp)
 
-# Make sure we include the bindings with our library
+# Make sure we always link the bindings with our library
 add_dependencies(${PROJECT_NAME} godot-cpp)
 
+# Generate gdextension config file
+add_subdirectory(template)
 
-# Install, just copies the bin file from build and puts in the install directory
+
+# Install routine, it just copies the bin file from build and puts in the install directory
 install(
     DIRECTORY ${CMAKE_BINARY_DIR}/bin
     DESTINATION ${INSTALL_DIR}

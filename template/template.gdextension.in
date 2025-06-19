@@ -1,15 +1,15 @@
 [configuration]
 
 entry_symbol = "${ENTRY_SYMBOL}"
-compatibility_minimum = 4.4
+compatibility_minimum = ${GODOT_VERSION} 
 
 [libraries]
 
 linux.release.x86_64 = "lib/Linux/lib${PROJECT_NAME}.so"
 linux.debug.x86_64 = "lib/Linux/lib${PROJECT_NAME}-d.so"
 
-macos.release = "lib/Darwin-Universal/lib${PROJECT_NAME}.dylib"
-macos.debug = "lib/Darwin-Universal/lib${PROJECT_NAME}-d.dylib"
+macos.release = "lib/Darwin/lib${PROJECT_NAME}.dylib"
+macos.debug = "lib/Darwin/lib${PROJECT_NAME}-d.dylib"
 
 windows.release.x86_64 = "lib/Windows/${LIB_PREFIX}${PROJECT_NAME}.dll"
 windows.debug.x86_64 = "lib/Windows/${LIB_PREFIX}${PROJECT_NAME}-d.dll"
