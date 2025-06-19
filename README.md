@@ -1,19 +1,14 @@
 # Vetro's Quick and (kind of) Dirty GDExtension CMake template
 
-This repo has been built using with the info I could understand by reading the godot-cpp repository and Godot docs.
+This repo has been built using with the info I could understand by reading the [godot-cpp repository](https://github.com/godotengine/godot-cpp) and [Godot docs](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html).
 
-Also from what I could learn from visiting this repo:
-https://github.com/asmaloney/GDExtensionTemplate
+Also from what I could learn from visiting [asmaloney's repo](https://github.com/asmaloney/GDExtensionTemplate), *(which i'll admit, I took some code from to generate the .gdextension file along with some snippets)*.
 
-*(which i'll admit, I took some code from to generate the gdextension file along with other snippets)*
-
-Made mostly for personal use, but I'll be happy if it results useful to someone.
-
-This kind of a quick and dirty implementation, the bare minimum to get something running; if you want something more robust, I recommend asmaloney's template 1000 times.
+Made mostly for personal use, but I'll be happy if it results useful to someone. This kind of a quick and dirty implementation, the bare minimum to get something running; if you want something more robust, I recommend asmaloney's template 1000 times.
 
 But if you want something simpler to understand and modify then maybe this is what you need, ideally I'll be updating this as I understand how to better use CMake, but for the moments this should work just fine.
 
-# BEFORE YOU START
+# Before you start
 
 ## Select your godot version
 
@@ -35,9 +30,9 @@ In case you cannot use the bindings bundled in godot-cpp you can get the extensi
 You will get a file called `extension_api.json` on the same place your executable is, just drop it at the root of this folder and it will be used instead of the default one on godot-cpp.
 
 
-# WORKING ON YOUR LIBRARY
+# Working on your library
 
-All the source files inside src are listed and added to the library automatically, you can classify in subfolders if you like, as long as it is a .cpp ans is inside src it will be compiled and added to the library.
+All the source files inside src are listed and added to the library automatically, you can classify in subfolders if you like, as long as it is a `.cpp` and is inside src it will be compiled and added to the library.
 
 So is just a matter adding your files there and building your project.
 
@@ -52,8 +47,6 @@ This build system only has targets for Mac, Windows and Linux.
 
 ## Testing
 
-Use the install command, this will automatically move the files to INSTALL_DIR, which by default is set in folder called demo inside the project
+Use the install command, this will automatically move the files to INSTALL_DIR, which by default is set in folder called demo inside the project, if you want it to be elsewhere just change the path the variable, or just make a project inside of that folder if you prefer it.
 
-If you want it to be elsewhere just change the path the variable, or just make a project inside of that folder if you prefer it.
-
-I'm planning to maybe use another routine that isn't the install command itself but as I said, quick and dirty.
+I'm planning to maybe use something that isn't the install routine itself but as I said, quick and dirty.
