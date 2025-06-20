@@ -4,15 +4,25 @@ Also from what I could learn from visiting [asmaloney's GDExtension template](ht
 
 Made mostly for personal use, but I'll be happy if it results useful to someone, a more simple implementation with just the bare minimum to get something running; if you want something more robust, I recommend asmaloney's template 1000 times over this.
 
+
 # Before you start
 
-## Select your godot version
+There's a few things you should set up before starting.
 
-The godot-cpp repo has been added as a git submodule, by default I set it on Godot 4.4 (latest stable release as I'm writing this), you can change the version by switching the branch on the submodule directly:
+
+## Set up godot-cpp repo
+
+The godot-cpp repo has been added as a git submodule, by default I set it on Godot 4.4 (latest stable release as I'm writing this), you need to initialize submodules in order to populate `godot-cpp` repository:
 
 ```
-   cd godot-cpp 
-   git checkout <branch-name>
+   >git submodule update --init
+```
+
+ You can also change the version by switching the branch on the submodule directly:
+
+```
+   >cd godot-cpp 
+   >git checkout <branch-name>
 ```
 
 ## Generating Godot bindings
@@ -34,12 +44,11 @@ So is just a matter adding your files there and building your project.
 
 ## Building your library
 
-When you build your library, it will be saved in `./build/bin/`
-Along with it a proper `.gdextension` file is generated
+When you build your library, it will be saved in `./build/bin/` along with it a proper `.gdextension` file is generated, placed in a folder according to what system is targeted to.
 
-The file is placed in a folder according to what system is targeted to, e.g if you're on windows, the file will be on `bin/lib/Windows/yourLibrary.dll`. 
+e.g if you're on windows, the file will be on `bin/lib/Windows/yourLibrary.dll`. 
 
-This build system only has targets for Mac, Windows and Linux.
+*(This build system only has targets for Mac, Windows and Linux.)*
 
 ## Testing
 
